@@ -73,7 +73,8 @@ Example:
   "movies/Another Movie (2024)": 1724198400.0,
   "movies/The First Movie (2001)": 1755304302.123,
   "tv/Best Show (2025)/S01E08": 1754684111.456,
-  "tv/Best Show (2025)/S01E09": 1754684111.456
+  "tv/Best Show (2025)/S01E09": 1754684112.789,
+  "tv/Best Show (2025)/S01E10-E11": 1754684113.654
 }
 ```
 
