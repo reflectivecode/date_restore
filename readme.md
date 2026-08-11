@@ -170,13 +170,13 @@ VIDEO_EXTENSIONS=mkv,mp4,m4v,avi
 The latest Docker image is automatically built and pushed to both of these registries:
 
 ```text
-ghcr.io/reflectivecode/date_restore:latest
+ghcr.io/reflectivecode/date-restore:latest
 ```
 
 and
 
 ```text
-reflectivecode/date_restore:latest
+reflectivecode/date-restore:latest
 ```
 
 The container needs access to the media directories because it reads and modifies their filesystem timestamps. The container does not need to run as root nor does it need any network access. The container can run in a readonly filesystem as long as it has write access to the media directories and the index file.
@@ -195,7 +195,7 @@ docker run -d \
   -e SCAN_INTERVAL=300 \
   -e VIDEO_EXTENSIONS=mkv,mp4 \
   -v /host_path/media:/media \
-  ghcr.io/reflectivecode/date_restore:latest
+  ghcr.io/reflectivecode/date-restore:latest
 ```
 
 ### Running as a specific user
@@ -217,7 +217,7 @@ docker run -d \
   -e SCAN_INTERVAL=300 \
   -e VIDEO_EXTENSIONS=mkv,mp4 \
   -v /host_path/media:/media \
-  ghcr.io/reflectivecode/date_restore:latest
+  ghcr.io/reflectivecode/date-restore:latest
 ```
 
 ## Docker Compose
@@ -227,7 +227,7 @@ Example `compose.yml`:
 ```yaml
 services:
   date-restore:
-    image: ghcr.io/reflectivecode/date_restore:latest
+    image: ghcr.io/reflectivecode/date-restore:latest
     container_name: date-restore
     restart: unless-stopped
     read_only: true
