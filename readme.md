@@ -166,7 +166,13 @@ VIDEO_EXTENSIONS=mkv,mp4,m4v,avi
 
 ## Docker
 
-The Docker image is:
+The latest Docker image is automatically built and pushed to both of these registries:
+
+```text
+ghcr.io/reflectivecode/date_restore:latest
+```
+
+and
 
 ```text
 reflectivecode/date_restore:latest
@@ -188,7 +194,7 @@ docker run -d \
   -e SCAN_INTERVAL=300 \
   -e VIDEO_EXTENSIONS=mkv,mp4 \
   -v /host_path/media:/media \
-  reflectivecode/date_restore:latest
+  ghcr.io/reflectivecode/date_restore:latest
 ```
 
 ### Running as a specific user
@@ -210,7 +216,7 @@ docker run -d \
   -e SCAN_INTERVAL=300 \
   -e VIDEO_EXTENSIONS=mkv,mp4 \
   -v /host_path/media:/media \
-  reflectivecode/date_restore:latest
+  ghcr.io/reflectivecode/date_restore:latest
 ```
 
 ## Docker Compose
@@ -220,7 +226,7 @@ Example `compose.yml`:
 ```yaml
 services:
   date-restore:
-    image: reflectivecode/date_restore:latest
+    image: ghcr.io/reflectivecode/date_restore:latest
     container_name: date-restore
     restart: unless-stopped
     read_only: true
