@@ -1,10 +1,12 @@
-FROM python:3.14-alpine
-
-RUN pip install --no-cache-dir watchdog
+FROM python:3.13-alpine
 
 WORKDIR /app
 
-COPY date_restore.py /app/date_restore.py
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY date_restore.py .
 
 RUN chmod 755 -R /app
 
